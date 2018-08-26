@@ -1,6 +1,7 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 import { TabBar, SearchBar } from 'antd-mobile-rn';
+import colors from 'constants/colors';
 
 export default class BasicTabBarExample extends React.Component{
   constructor(props) {
@@ -12,9 +13,9 @@ export default class BasicTabBarExample extends React.Component{
 
   renderContent(pageText) {
     return (
-      <View style={{ flex: 1, alignItems: 'center', backgroundColor: 'white' }}>
+      <View style={{ flex: 1, alignItems: 'center', backgroundColor: colors.backgroundColor }}>
         <SearchBar placeholder="Search" />
-        <Text style={{ margin: 50 }}>{pageText}</Text>
+        <Text style={{ margin: 50, color: colors.textColor }}>{pageText}</Text>
       </View>
     );
   }
@@ -33,36 +34,35 @@ export default class BasicTabBarExample extends React.Component{
         barTintColor="#ccc"
       >
         <TabBar.Item
-          title="Life"
+          title="Broker"
           selected={this.state.selectedTab === 'blueTab'}
           onPress={() => this.onChangeTab('blueTab')}
         >
-          {this.renderContent('Life Tab')}
+          {this.renderContent('Broker Tab')}
         </TabBar.Item>
         <TabBar.Item
-          
-          title="Koubei"
+          title="Subscriber"
           badge={2}
           selected={this.state.selectedTab === 'redTab'}
           onPress={() => this.onChangeTab('redTab')}
         >
-          {this.renderContent('Koubei Tab')}
+          {this.renderContent('Subscriber Tab')}
         </TabBar.Item>
         <TabBar.Item
           
-          title="Friend"
+          title="Publisher"
           selected={this.state.selectedTab === 'greenTab'}
           onPress={() => this.onChangeTab('greenTab')}
         >
-          {this.renderContent('Friend Tab')}
+          {this.renderContent('Publisher Tab')}
         </TabBar.Item>
         <TabBar.Item
           
-          title="My"
+          title="About"
           selected={this.state.selectedTab === 'yellowTab'}
           onPress={() => this.onChangeTab('yellowTab')}
         >
-          {this.renderContent('My Tab')}
+          {this.renderContent('About Tab')}
         </TabBar.Item>
       </TabBar>
     );
