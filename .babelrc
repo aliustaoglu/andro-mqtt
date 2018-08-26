@@ -1,0 +1,19 @@
+{
+  "presets": ["babel-preset-react-native-stage-0/decorator-support"],
+  "env": {
+    "development": {
+      "plugins": [
+        "transform-react-jsx-source",
+        ["import", { "libraryName": "antd-mobile-rn" }],
+        [
+          "module-resolver",
+          {
+            "cwd": "babelrc",
+            "root": ["./src"],
+            "extensions": [".ios.js", ".android.js", ".js", ".jsx", ".json"]
+          }
+        ]
+      ]
+    }
+  }
+}
